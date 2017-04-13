@@ -1,0 +1,19 @@
+{
+  "name": "alexa_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ponkapa/home_hero_alexa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ponkapa/home_hero_alexa/issues"
+  },
+  "homepage": "https://github.com/Ponkapa/home_hero_alexa"
+}
