@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/Ponkapa/home_hero_alexa/issues"
   },
-  "homepage": "https://github.com/Ponkapa/home_hero_alexa"
+  "homepage": "https://github.com/Ponkapa/home_hero_alexa",
+  "dependencies": {
+    "alexa-app": "^4.0.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "lodash": "^4.17.4",
+    "mocha": "^3.2.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  }
 }
