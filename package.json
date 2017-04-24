@@ -1,34 +1,13 @@
 {
-  "name": "alexa_node",
+  "name": "cakebaker",
   "version": "1.0.0",
+  "description": "alexa helps you bake a cake!",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ponkapa/home_hero_alexa.git"
-  },
-  "author": "",
+  "author": "josh skeen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ponkapa/home_hero_alexa/issues"
-  },
-  "homepage": "https://github.com/Ponkapa/home_hero_alexa",
   "dependencies": {
-    "alexa-app": "^4.0.0",
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
-    "lodash": "^4.17.4",
-    "mocha": "^3.2.0",
-    "request": "^2.81.0",
-    "request-promise": "^4.2.0"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "devDependencies": {
-    "mocha": "^3.2.0"
-  },
-  "description": ""
+    "alexa-app": "^3.1.0",
+    "dynasty": "^0.2.4",
+    "lodash": "^4.3.0"
+  }
 }

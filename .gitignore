@@ -1,1 +1,3 @@
-node_modules/**
+book/distribution-tng/*
+book/Solutions/*
+/node_modules/*
