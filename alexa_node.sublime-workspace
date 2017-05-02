@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"SE",
+				"HOME_HERO_SESSION_KEY"
+			],
+			[
+				"data",
+				"databaseHelper"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"Table_",
+				"TABLE_NAME"
+			],
+			[
+				"insert",
+				"insertUser"
+			],
+			[
+				"find",
+				"findUser"
+			],
+			[
+				"create",
+				"createTable"
+			],
+			[
+				"get",
+				"getTable"
+			],
+			[
+				"tble",
+				"table_name"
+			],
+			[
+				"Home",
+				"homeHeroHelperData"
+			],
+			[
+				"getCakeBa",
+				"getCakeBakerHelperFromRequest"
+			],
+			[
 				"airport",
 				"airportCode"
 			],
@@ -100,10 +144,6 @@
 				"getVertex"
 			],
 			[
-				"get",
-				"getId"
-			],
-			[
 				"add",
 				"addVertex"
 			],
@@ -116,10 +156,66 @@
 	"buffers":
 	[
 		{
-			"file": "faa_data_helper.js",
+			"file": "/C/Users/James/Desktop/cake-bake-app/alexa-app-server/examples/apps/alexa-cakebaker/index.js",
 			"settings":
 			{
-				"buffer_size": 1518,
+				"buffer_size": 1043,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/James/Desktop/cake-bake-app/alexa-app-server/examples/apps/alexa-cakebaker/database_helper.js",
+			"settings":
+			{
+				"buffer_size": 1508,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "'use strict';\nmodule.change_code = 1;\nvar _ = require('lodash');\n// var dynasty = require('dynasty')({});\nvar localUrl = 'http://localhost:4000';\nvar localCredentials = {\n  region: 'us-east-1',\n  accessKeyId: 'fake',\n  secretAccessKey: 'fake'\n};\nvar TABLE_NAME = \"user_data\"\nvar localDynasty = require('dynasty')(localCredentials, localUrl);\nvar dynasty = localDynasty;\n\nvar getUser = function(userId){\n\treturn dynasty.table(TABLE_NAME).find(userId)\n}\n\nvar insertUser = function(userId){\n\treturn getUser(userId).then(function(user){\n\t\tif (user == undefined){\n\t\t\treturn dynasty.table(TABLE_NAME).insert({'userId': userId})\n\t\t}\n\t})\n}\n\nfunction DataBaseHelper() {}\n\nDataBaseHelper.prototype.createTable = function() {\n  return dynasty.describe(TABLE_NAME)\n    .catch(function(error) {\n      return dynasty.create(TABLE_NAME, {\n        key_schema: {\n          hash: ['userId', 'string']\n        }\n      });\n    });\n};\n\nDataBaseHelper.prototype.addToUser = function(userId, key, add_value){\n\tif (add_value == undefined){\n\t\tadd_value = 1;\n\t}\n\treturn getUser(userId).then(function(user){\n\t\tif (user){\t\t\n\t\t\tvar value = user[key];\n\t\t\tif (value) {\n\t\t\t\tuser[key] = value + add_value;\n\t\t\t}\n\t\t\telse {\n\t\t\t\tuser[key] = add_value;\n\t\t\t}\n\t\t\treturn dynasty.table(TABLE_NAME).insert(user)\n\t\t}\n\t})\n}\n\n// then(function(){\n// \tdataBaseHelper.createTable()\n// });\n// var promise = newTable.insert({'userId': '12345', 'test': 'blahblahblha'})\n\n// newTable.find('12345').then(function(user){\n// \tuser[\"newThing\"] = \"five or so\";\n// \tnewTable.insert(user)\n// })\n// promise.then(function(){\n// \tpromise = newTable.find('12345');\n// \tpromise.then(function(user){\n// \t\tconsole.log(user)\n// \t\tpromise = newTable.insert({'userId': '12345', 'test': 'overwritten'})\n// \t\tpromise.then(function(){\n// \t\t\tpromise = newTable.find('12345');\n// \t\t\tpromise.then(function(user){\n// \t\t\t\tconsole.log(user)\n// \t\t\t})\n// \t\t})\n// \t})\n// })\n// var table = dynasty.table('TestTable')\n// table.find('12345').then(function(resp){\n// \tconsole.log(resp)\n// })\n// DataBaseHelper.prototype.insertData = function(userId, table_name, new_data) {\n//   return getTable(table_name).insert({\n//     userId: userId,\n//     data: new_data\n//   }).catch(function(error) {\n//     console.log(error);\n//   });\n// };\n\n// DataBaseHelper.prototype.readData = function(userId, table_name) {\n//   return getTable(table_name).find(userId)\n//     .then(function(result) {\n//       return result;\n//     })\n//     .catch(function(error) {\n//       console.log(error);\n//     });\n// };\n\n// DataBaseHelper.prototype.updateData = function(userId, table_name, new_data){\n//   return getTable(table_name)\n// }\n// module.exports = DataBaseHelper;\n",
+			"file": "test.js",
+			"file_size": 1560,
+			"file_write_time": 131376299145939420,
+			"settings":
+			{
+				"buffer_size": 2666,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "console.log(\"test\");"
+			}
+		},
+		{
+			"file": "cakebaker_helper.js",
+			"settings":
+			{
+				"buffer_size": 1726,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Copy Content of r10 to r5 one bit at a time\n\nset0b11001100\nseth0b11001111",
+			"settings":
+			{
+				"buffer_size": 73,
+				"line_ending": "Windows",
+				"name": "Copy Content of r10 to r5 one bit at a time"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 64,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 0,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -180,10 +276,15 @@
 	],
 	"file_history":
 	[
-		"/C/Users/James/Desktop/alexa_faa/alexa-app-server/examples/apps/alexa_node/index.js",
-		"/C/Users/James/Desktop/alexa_faa/alexa-app-server/examples/server/login.js",
+		"/C/Users/James/Desktop/Computer Architecture/test2.py",
+		"/C/Users/James/Desktop/cake-bake-app/alexa-app-server/examples/apps/alexa-cakebaker/test.js",
+		"/C/Users/James/Desktop/cake-bake-app/alexa-app-server/dynamodb_local_latest/README.txt",
+		"/C/Users/James/Downloads/dynamodb_local_latest/README.txt",
 		"/C/Users/James/Desktop/alexa-airportinfo/alexa-app-server/examples/apps/alexa-airportinfo/index.js",
+		"/C/Users/James/Desktop/alexa_faa/alexa-app-server/examples/apps/alexa_node/index.js",
 		"/C/Users/James/Desktop/alexa_faa/alexa-app-server/examples/apps/alexa_node/faa_data_helper.js",
+		"/C/Users/James/Desktop/alexa-airportinfo/alexa-app-server/examples/apps/alexa-airportinfo/faa_data_helper.js",
+		"/C/Users/James/Desktop/alexa_faa/alexa-app-server/examples/server/login.js",
 		"/C/Users/James/Desktop/alexa-airportinfo/alexa-app-server/index.js",
 		"/C/Users/James/Desktop/alexa-airportinfo/alexa-app-server/examples/server.js",
 		"/C/Users/James/Desktop/alexa_faa/alexa-app-server/index.js",
@@ -302,16 +403,11 @@
 		"/C/Users/James/Dropbox/Winter/CSC 430 - Database Management Systems/Integrity Constraints",
 		"/C/Users/James/Dropbox/Winter/CSC 450 - Computer Networks/Sliding Window Protocols",
 		"/C/Users/James/Desktop/Notes/Winter/CSC 430 - Database Management Systems/Relational Algebra",
-		"/C/Users/James/Desktop/Notes/Winter/CSC 430 - Database Management Systems/Relational Algebra 2",
-		"/C/Users/James/Dropbox/Winter/CSC 430 - Database Management Systems/Normal Forms",
-		"/C/Users/James/Downloads/compiler.py",
-		"/C/Program Files/CPUID/HWMonitor/hwm_readme.txt",
-		"/C/Users/James/Desktop/Homework CSC450",
-		"/C/Users/James/Dropbox/Gourds Class/Challenge 4/output.txt"
+		"/C/Users/James/Desktop/Notes/Winter/CSC 430 - Database Management Systems/Relational Algebra 2"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -470,16 +566,105 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "faa_data_helper.js",
+					"file": "/C/Users/James/Desktop/cake-bake-app/alexa-app-server/examples/apps/alexa-cakebaker/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1043,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								624,
+								624
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/James/Desktop/cake-bake-app/alexa-app-server/examples/apps/alexa-cakebaker/database_helper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1508,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								464,
+								464
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2666
+							]
+						],
+						"settings":
+						{
+							"auto_name": "console.log(\"test\");",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 124.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "cakebaker_helper.js",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1518,
+						"buffer_size": 1726,
 						"regions":
 						{
 						},
@@ -493,13 +678,98 @@
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								63,
+								63
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Copy Content of r10 to r5 one bit at a time",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 64,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64,
+								64
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]

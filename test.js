@@ -13,15 +13,11 @@ var TABLE_NAME = "user_data"
 var localDynasty = require('dynasty')(localCredentials, localUrl);
 var dynasty = localDynasty;
 
-function DatabaseHelper() { }
+function DatabaseHelper() {}
 
 
 var getUser = function(userId){
   return dynasty.table(TABLE_NAME).find(userId)
-}
-
-DatabaseHelper.prototype.findUser = function(userId){
-  return getUser(userId)
 }
 
 DatabaseHelper.prototype.insertUser = function(userId){
@@ -32,6 +28,11 @@ DatabaseHelper.prototype.insertUser = function(userId){
   })
 }
 
+DatabaseHelper.prototype.findUser = function(userId){
+	getUser(userId).then(function(user){
+		return user;
+	})
+}
 DatabaseHelper.prototype.createTable = function() {
   return dynasty.describe(TABLE_NAME)
     .catch(function(error) {
@@ -42,7 +43,6 @@ DatabaseHelper.prototype.createTable = function() {
       });
     });
 };
-
 
 DatabaseHelper.prototype.addToUser = function(userId, key, add_value){
   if (add_value == undefined){
@@ -62,22 +62,6 @@ DatabaseHelper.prototype.addToUser = function(userId, key, add_value){
   })
 }
 
-DatabaseHelper.prototype.removeFromUser = function(userId, key, take_value){
-  if (take_value == undefined){
-    take_value = 1;
-  }
-  return getUser(userId).then(function(user){
-    if (user){
-      var value = user[key];
-      if (value >= take_value) {
-        user[key] = value - take_value;
-      }
-      else {
-        return Promise.reject("Don't have enough " + key);
-      }
-      return dynasty.table(TABLE_NAME).insert(user)
-    }
-  })
-}
+dynasty.drop(TABLE_NAME);
 
 module.exports = DatabaseHelper;
