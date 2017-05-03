@@ -1,17 +1,17 @@
 'use strict';
 module.change_code = 1;
 var _ = require('lodash');
-// var dynasty = require('dynasty')({});
-var localUrl = 'http://localhost:4000';
-var localCredentials = {
-  region: 'us-east-1',
-  accessKeyId: 'fake',
-  secretAccessKey: 'fake'
-};
-
+var dynasty = require('dynasty')({});
+// var localUrl = 'http://localhost:4000';
+// var localCredentials = {
+//   region: 'us-east-1',
+//   accessKeyId: 'fake',
+//   secretAccessKey: 'fake'
+// };
+// var localDynasty = require('dynasty')(localCredentials, localUrl);
+// var dynasty = localDynasty;
 var TABLE_NAME = "user_data"
-var localDynasty = require('dynasty')(localCredentials, localUrl);
-var dynasty = localDynasty;
+
 
 function DatabaseHelper() { }
 

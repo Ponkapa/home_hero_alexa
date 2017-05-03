@@ -1,9 +1,9 @@
 {
-  "name": "cakebaker",
+  "name": "homehero",
   "version": "1.0.0",
-  "description": "alexa helps you bake a cake!",
+  "description": "alexa manages groceries and uses them to bake pancakes",
   "main": "index.js",
-  "author": "josh skeen",
+  "author": "james ortis",
   "license": "ISC",
   "dependencies": {
     "alexa-app": "^3.1.0",

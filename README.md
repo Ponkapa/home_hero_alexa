@@ -1,3 +1,1 @@
-Alexa CakeBaker source code for the BNR Article : Implementing Persistence in an Alexa Skill
-
-For the completed solution, check out the `completed` branch
+Alexa home hero app attempt. Readme will be updated with more resources.
