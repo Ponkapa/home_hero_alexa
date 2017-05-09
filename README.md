@@ -1,5 +1,5 @@
 # Licensing
-[License](LICENSE.TXT)
+[License](LICENSE.txt)
 # About
 This project was for a CSC 490C class at Louisiana Tech University, with respect to the Internet of Things. The goals are to bring together Internet of Things technology, and to that end, this app serves as a training point for how to implement Alexa technology to the goals of that project.
 
@@ -36,7 +36,7 @@ Part Five and Six I never went through (as evidenced by no "Home Hero" app being
 ### Promises
 Oh boy, if you haven't dealt with Javascript you are in for a trip. Promises are a response to callback functions in Javascript, and effectively that means they sometimes just don't make any sense (okay, they do, but I'm still a little annoyed at my old confusion). Callback functions and Promises are ways for Javascript to run asynchronously. This means they don't wait on code that isn't really needed (say, waiting for a database call) to go through the rest of the program. Using callbacks and Promises mean you can say "Hey, call this function when you're ready, but no rush". Promises primarily use a .then(Resolved Handler Function, Rejected Handler Function) structure. That means you pass it a function to do when it works, and a function you do if it fails.
 [Here's the dynasty API](http://dynastyjs.com/index.html). They have a pretty good explanation on how Promises work, so I highly recommend it. In fact, if you understand them pretty well, they're not too hard! I highly recommend reading through some of this before going through all the database stuff in the tutorials. The backend uses [this](http://bluebirdjs.com/docs/getting-started.html). Bluebird makes me cry. They have references to a beginners guide to explain things, but NO beginners guide! I'll try and give the rundown here, as best I understand it myself.
-Although you might think "oh, if I make a return statement here, it'll return out for this function", that's not the way it works. Maybe it's more obvious to someone else, but I had no idea for awhile why my code wasn't properly returning what I asked it to. The best (and worst) example of this is in my [code](), right here:
+Although you might think "oh, if I make a return statement here, it'll return out for this function", that's not the way it works. Maybe it's more obvious to someone else, but I had no idea for awhile why my code wasn't properly returning what I asked it to. The best (and worst) example of this is in my [code](https://github.com/Ponkapa/home_hero_alexa/blob/2b7d96a579bf042752820e10edb44869c8f0f9c5/index.js#L165-L181), right here: 
 ```
 return databaseHelper.removeFromUser(userId, 'flour', 2).then(function(){
   return databaseHelper.removeFromUser(userId, 'sugar', 4).then(function(){
